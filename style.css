@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto+Condensed&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@200&family=Roboto+Condensed&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+html, body{
+    display: grid; /*using dislplay grid we place items center */
+    height: 100vh;
+    width: 100%;
+    place-items:center;
+    background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+}
+::selection{
+    background: #ff80bf;
+}
+.container{
+background: #fff;
+max-width:350px; /*this is the total container max width not the screen */
+width:100%;
+background-size: cover;
+padding: 25px 30px;
+border-radius:5px;
+box-shadow: 0 10px 10px rgba(0,0,0,0,15);
+
+}
+.container form .title{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    position: relative;
+}
+/*underlining the title */
+.container form .title::before{ 
+    content:'';
+    position: absolute;
+    height: 4px;
+    width: 50%;
+    left: 0px;
+    bottom: 3px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+}
+.container form .input-box{
+    width: 100%;
+    height: 45px;
+    margin-top: 25px;
+    position: relative;
+}
+/* this is for input field box design */
+.container form .input-box input{ 
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+    border:none;
+}
+/*underline for the input box */
+.container form .underline::after{ 
+    content:'';
+    position: absolute;
+    height:2px;
+    width: 100%;
+    background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+    left:0;
+    bottom: 0;
+    transform: scaleX(0); /*making the underline disapear before the selection */
+    transform-origin:left ; /*underline should begin from the left */
+    transform: all 0.3s ease;
+}
+.container form .input-box input:focus ~ .underline::after,
+.container form .input-box input:valid ~ .underline::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.container form button{
+    margin: 40px 0 20px 0;
+}
+.container .input-box input[type="submit"]:hover{ /* continue button effect */ 
+    letter-spacing: 3px;
+    background: linear-gradient(to left, #99004d 0%, #ff0080 100%);
+}
+.container .option{ /*for Or connect with social media */
+    font-size: 14px;
+    text-align: center;
+}
+.container .facebook a, 
+.container .instagram a{
+    display: block; /* make it block level element */
+    height: 45px;
+    width:100%;
+    font-size: 15px;
+    text-decoration: none;
+    padding-left: 20px;
+    line-height: 45px;
+    color:#fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.container .facebook i,
+.container .instagram i{
+    padding-right: 12px;
+    font-size: 20px;
+}
+.container .instagram a{
+    background:linear-gradient(to right, #f27187, #f0748c, #ef7690, #ed7995, rgb(230, 179, 179));
+    margin: 20px 0 15px 0;
+}
+.container .instagram a:hover{
+    background:linear-gradient(to left, #f27187, #f0748c, #ef7690, #ed7995, rgb(230, 179, 179));
+    margin: 20px 0 15px 0;
+}
+.container .facebook a{
+    background:linear-gradient(to right, #7295f6, #789af3, #7f9ff0, #85a3ec, #8ca8e9);
+    margin: 20px 0 15px 0;
+}
+.container .facebook a:hover{
+    background:linear-gradient(to left, #7295f6, #789af3, #7f9ff0, #85a3ec, #8ca8e9);
+    margin: 20px 0 15px 0;
+}
